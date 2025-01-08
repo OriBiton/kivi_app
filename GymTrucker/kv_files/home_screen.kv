@@ -1,0 +1,23 @@
+<HomeScreen>:
+    FloatLayout:
+        
+        Image:
+            source: 'images/logo.png'
+            size_hint: 1, 1  # יתפוס 100% מהמסך
+            allow_stretch: True  # מתיחה בהתאם לגודל המסך
+            keep_ratio: False  # ביטול שמירה על יחס גובה-רוחב
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: None, None
+            size: 450, 60
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            spacing: 20
+
+            MDRaisedButton:
+                text: "Login"
+                on_press: root.go_to_login()
+
+            MDRaisedButton:
+                text: "Create Account"
+                on_press: root.go_to_create_account()

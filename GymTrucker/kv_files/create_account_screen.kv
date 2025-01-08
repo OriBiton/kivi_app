@@ -1,0 +1,68 @@
+<CreateAccountScreen>:
+    first_name: first_name
+    last_name: last_name
+    email: email
+    username: username
+    password: password
+    confirm_password: confirm_password
+
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                source: 'images/logo.png'
+                size: self.size
+                pos: self.pos
+
+        ScrollView:
+            size_hint: (0.5, 0.5)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+
+            GridLayout:
+                cols: 1
+                spacing: 15
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDTextField:
+                    id: first_name
+                    hint_text: "First Name"
+                    size_hint_y: None
+                    height: 40
+
+                MDTextField:
+                    id: last_name
+                    hint_text: "Last Name"
+                    size_hint_y: None
+                    height: 40
+
+                MDTextField:
+                    id: email
+                    hint_text: "Email"
+                    size_hint_y: None
+                    height: 40
+
+                MDTextField:
+                    id: username
+                    hint_text: "Username"
+                    size_hint_y: None
+                    height: 40
+
+                MDTextField:
+                    id: password
+                    hint_text: "Password"
+                    password: True
+                    size_hint_y: None
+                    height: 40
+
+                MDTextField:
+                    id: confirm_password
+                    hint_text: "Confirm Password"
+                    password: True
+                    size_hint_y: None
+                    height: 40
+
+                MDRaisedButton:
+                    text: "Create Account"
+                    size_hint_y: None
+                    height: 40
+                    on_press: root.submit_form()
